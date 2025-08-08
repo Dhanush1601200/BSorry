@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>For You — A Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+
+  <!-- ====== SECTION 1: Intro / Typewriter ====== -->
+  <section aria-labelledby="introTitle">
+    <div class="intro">
+      <div class="left">
+        <h1 id="introTitle">For you — read slowly ❤️</h1>
+        <div id="type" class="typewriter" aria-live="polite" aria-atomic="true"></div>
+        <div class="controls">
+          <button id="replay" class="btn">Replay</button>
+          <button id="skip" class="btn ghost">Reveal All</button>
+          <div style="flex:1"></div>
+        </div>
+      </div>
+
+      <div class="right">
+        <h3 style="margin-top:4px">Little extras</h3>
+        <div style="height:12px"></div>
+        <div class="hearts-canvas" id="heartsArea" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 2: Interactive Timeline ====== -->
+  <section aria-labelledby="timelineTitle">
+    <h2 id="timelineTitle">Our Timeline</h2>
+    <p class="small">Scroll → click any milestone to see a photo and story.</p>
+    <div class="timeline" id="timeline" tabindex="0" role="list">
+      <!-- Milestones injected by JS -->
+    </div>
+  </section>
+
+  <!-- Modal for milestone detail -->
+  <div class="modal-back" id="modalBack" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <button id="closeModal" class="modal-close" aria-label="Close modal">✕</button>
+      <div class="media" id="modalMedia"></div>
+      <h3 id="modalTitle" style="margin-top:12px"></h3>
+      <div class="small" id="modalDate"></div>
+      <p id="modalBody" style="margin-top:10px"></p>
+    </div>
+  </div>
+
+  <!-- ====== SECTION 3: Memory Carousel ====== -->
+  <section aria-labelledby="carouselTitle">
+    <h2 id="carouselTitle">Memory Carousel</h2>
+    <p class="small">Enjoy our special moments as they fade and change.</p>
+    <div class="carousel" id="carousel" aria-live="polite" aria-atomic="true">
+      <!-- Slides injected by JS -->
+    </div>
+  </section>
+
+  <!-- ====== SECTION 4: Time Loved Clock ONLY ====== -->
+  <section aria-labelledby="countTitle">
+    <h2 id="countTitle">How Long I’ve Loved You</h2>
+    <div class="countdown-wrapper">
+      <div class="countdown" aria-label="Time loved since first day">
+        <div class="count-block" role="group" aria-labelledby="lovedDaysLabel">
+          <div id="lovedDays" class="number">00</div>
+          <div id="lovedDaysLabel" class="label">Days Loved</div>
+        </div>
+        <div class="count-block" role="group" aria-labelledby="lovedHoursLabel">
+          <div id="lovedHours" class="number">00</div>
+          <div id="lovedHoursLabel" class="label">Hours Loved</div>
+        </div>
+        <div class="count-block" role="group" aria-labelledby="lovedMinsLabel">
+          <div id="lovedMins" class="number">00</div>
+          <div id="lovedMinsLabel" class="label">Minutes Loved</div>
+        </div>
+        <div class="count-block" role="group" aria-labelledby="lovedSecsLabel">
+          <div id="lovedSecs" class="number">00</div>
+          <div id="lovedSecsLabel" class="label">Seconds Loved</div>
+        </div>
+      </div>
+
+      <div class="date-input" style="margin-top:12px;">
+        <label for="startDate">Start date of our love:</label>
+        <input id="startDate" type="date" aria-describedby="startDateDesc" />
+      </div>
+
+      <div class="reasons" id="reasonsArea" aria-live="polite" aria-atomic="true" tabindex="0">
+        You make ordinary days glow.
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== SECTION 5: Fireworks Finale ====== -->
+  <section aria-labelledby="finalTitle" style="position:relative; overflow:hidden">
+    <h2 id="finalTitle">Finale — Click anywhere below</h2>
+    <p class="small">Click in the fireworks area to show how much I love you.</p>
+    <canvas id="fw-canvas" aria-label="Fireworks animation" role="img"></canvas>
+    <div class="final-text" id="finalText" aria-live="polite" aria-atomic="true" tabindex="0">Forever Yours ❤️</div>
+    <div style="height:8px"></div>
+  </section>
+
+</main>
+    <script src="script.js"></script>
+
+</body>
+</html>
